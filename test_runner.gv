@@ -1,0 +1,20 @@
+def groovyUtils = new com.eviware.soapui.support.GroovyUtils( context )  
+
+// get XmlHolder for request message def 
+holder = groovyUtils.getXmlHolder( "getSupportCityString#request" ) 
+
+// log.info holder.xml
+// change password using XPath 
+
+
+// declare namespace i='http://WebXml.com.cn/'
+holder['//web:theRegionCode'] = "3330"  
+
+
+// log.info holder.xml
+
+// write updated request back to teststep 
+holder.updateProperty()
+context.requestContent = holder.xml
+
+testRunner.runTestStepByName('getSupportCityString')

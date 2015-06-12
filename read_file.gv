@@ -1,0 +1,12 @@
+// log.info "soapUI"
+
+/*
+for (def i = 0; i < 100; i++){
+    log.info i
+}
+
+*/
+
+new File('/home/fan/sourcecode/groovy/example.txt').eachLine { line ->
+  log.info line
+}
